@@ -23,14 +23,17 @@ npm run build
 
 2. Compress gltf output from Houdini from the commandline
 ``` bash
-# Simple optimization
-gltfpack -i output.glb -o output_pack.glb
+# Simple optimization (Keep mesh name and material name)
+gltfpack -i output.glb -o output_pack.glb -kn -km
 
 # With Compression (Requires meshopt decoder to load optimized mesh)
-gltfpack -i output.glb -o output_pack_c.glb -c
+gltfpack -i output.glb -o output_pack_c.glb -c -kn -km
 
 # With even more Compression (The output can also be gzipped for extra compression on delivery)
-gltfpack i- output.glb -o output_pack_cc.glb -cc
+gltfpack i- output.glb -o output_pack_cc.glb -cc  -kn -km
+
+# Or just use the script
+bin/pack_gltf.sh output.glb
 ```
 
 ### draco
@@ -40,6 +43,9 @@ gltfpack i- output.glb -o output_pack_cc.glb -cc
 2. Compress
 ```bash
 gltf-pipeline -i output.glb -o output_drc.glb -d
+
+# Or use the script for automatic renaming
+bin/to_drc.sh output.glb
 ```
 
 ## Compression Methods Comparison
