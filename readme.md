@@ -33,7 +33,7 @@ gltfpack -i output.glb -o output_pack_c.glb -c -kn -km
 gltfpack i- output.glb -o output_pack_cc.glb -cc  -kn -km
 
 # Or just use the script
-bin/pack_gltf.sh output.glb
+bin/pack_gltf output.glb
 ```
 
 ### draco
@@ -45,7 +45,7 @@ bin/pack_gltf.sh output.glb
 gltf-pipeline -i output.glb -o output_drc.glb -d
 
 # Or use the script for automatic renaming
-bin/to_drc.sh output.glb
+bin/to_drc output.glb
 ```
 
 ## Compression Methods Comparison
